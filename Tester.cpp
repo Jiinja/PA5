@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA5                                                            *
+* Date: October 18, 2021                                                                 *
+* Description: this program tests the queues and the 24 hour simulation					 *
+******************************************************************************************/
+
 #include "Tester.h"
 
 void Tester::enqueue1() //tests enqueue for when the list has 1 item

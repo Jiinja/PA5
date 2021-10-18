@@ -1,3 +1,10 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA5                                                            *
+* Date: October 18, 2021                                                                 *
+* Description: this program runs a 24 hour grocery store line simulation with 2 lines	 *
+******************************************************************************************/
 #include "Simulation.hpp"
 
 Simulation::Simulation(int length)

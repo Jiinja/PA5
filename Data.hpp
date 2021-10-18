@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA5                                                            *
+* Date: October 18, 2021                                                                 *
+* Description: this program defines a data storage object used in the queue nodes		 *
+******************************************************************************************/
+
 #pragma once
 #include "LinkedList.h"
 class Data

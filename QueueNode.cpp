@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA5                                                            *
+* Date: October 18, 2021                                                                 *
+* Description: this program creates a node in the queues used for the simulation		 *
+******************************************************************************************/
+
 #include "QueueNode.h"
 
 QueueNode::QueueNode(int newNum, int newTime)

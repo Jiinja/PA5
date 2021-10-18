@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA5                                                            *
+* Date: October 18, 2021                                                                 *
+* Description: this program defines the simulation object used to simulate the queues	 *
+******************************************************************************************/
+
 #include "Queue.h"
 
 class Simulation {
