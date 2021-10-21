@@ -37,9 +37,9 @@ void LinkedList::remove() //removes the last item in the list
 	if (pPrev == nullptr) this->mpHead = nullptr;
 	else
 	{
-		pCur = nullptr;
 		pPrev->setNext(nullptr);
 	}
+	delete pCur; //deleteing the node that was removed
 }
 
 void LinkedList::printList() //prints the list: item, item, item, ....
@@ -55,6 +55,10 @@ void LinkedList::printList() //prints the list: item, item, item, ....
 
 LinkedList::~LinkedList()
 {
-	delete mpHead;
+	while (this != nullptr && this->mpHead != nullptr) //the list exists and is not empty
+	{
+		this->remove(); //remove stuff
+	}
+	delete this->mpHead; //then delete the head
 }
 

@@ -6,6 +6,7 @@
 * Description: this program runs a 24 hour grocery store line simulation with 2 lines	 *
 ******************************************************************************************/
 #include "Simulation.hpp"
+#include "Windows.h"
 
 Simulation::Simulation(int length)
 {
@@ -16,6 +17,22 @@ Simulation::Simulation(int length)
 
 void Simulation::run()
 {
+	std::string itemList[15]; //I originally had this array in each queueNode lmao shit ton of extra storage for no reason
+	itemList[0] = "eggs";
+	itemList[1] = "milk";
+	itemList[2] = "cheese";
+	itemList[3] = "steak";
+	itemList[4] = "chicken";
+	itemList[5] = "crackers";
+	itemList[6] = "tissues";
+	itemList[7] = "fruit snacks";
+	itemList[8] = "soda";
+	itemList[9] = "shampoo";
+	itemList[10] = "conditioner";
+	itemList[11] = "wine";
+	itemList[12] = "juice";
+	itemList[13] = "fruit";
+	itemList[14] = "vegetables";
 	srand(time(NULL)); //initialising random
 	Queue expressQueue;
 	Queue normalQueue;
@@ -27,7 +44,7 @@ void Simulation::run()
 	{
 		if (this->nextNormal == 0) //when time is 0, when time is -1, its time for another customer to start coming
 		{
-			this->nextNormal = rand() % 5 + 4; //random number 3-8
+			this->nextNormal = rand() % 6 + 3; //random number 3-8
 		}
 		if (this->nextExpress == 0)
 		{
@@ -38,18 +55,18 @@ void Simulation::run()
 		if (this->nextExpress == 0)
 		{
 			itemCount = rand() % 5 + 1;
-			expressQueue.enqueue(customerNumber, itemCount); //adds person to queue with random 1-5 items
+			expressQueue.enqueue(customerNumber, itemCount, itemList); //adds person to queue with random 1-5 items
 			std::cout << "Express entered: ID: " << customerNumber << "  Items: " << itemCount << "  Current Time: " << currentTime << std::endl;
 			customerNumber++;
 		}
 		if (this->nextNormal == 0)
 		{
-			itemCount = rand() % 5 + 4;
-			normalQueue.enqueue(customerNumber, itemCount); //adds person to queue with random 3-8 items
+			itemCount = rand() % 6 + 3;
+			normalQueue.enqueue(customerNumber, itemCount, itemList); //adds person to queue with random 3-8 items
 			std::cout << "Normal entered: ID: " << customerNumber << "  Items: " << itemCount << "  Current Time: " << currentTime << std::endl;
 			customerNumber++;
 		}
-		if (this->currentTime - this->printCheck > 10) //if it has been 10 minutes since last print
+		if (this->currentTime - this->printCheck > 10) //if it has been 10 minutes since last print 
 		{
 			if (!expressQueue.isEmpty()) //if express queue is not empty, print
 			{
@@ -85,6 +102,10 @@ void Simulation::run()
 				temp = normalQueue.dequeue(); //remove the customer from the queue & safe info
 				std::cout << "Normal exited: ID: " << temp.getID() << "  Total Service Time: " << temp.getTotalTime() << std::endl; //print customer info
 			}
+		}
+		if (currentTime == 1439)
+		{
+			//STOP
 		}
 	}
 }

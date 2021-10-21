@@ -8,31 +8,15 @@
 
 #include "QueueNode.h"
 
-QueueNode::QueueNode(int newNum, int newTime)
+QueueNode::QueueNode(int newNum, int newTime, std::string itemList[])
 {
-	std::string itemList[15];
-	itemList[0] = "eggs";
-	itemList[1] = "milk";
-	itemList[2] = "cheese";
-	itemList[3] = "steak";
-	itemList[4] = "chicken";
-	itemList[5] = "crackers";
-	itemList[6] = "tissues";
-	itemList[7] = "fruit snacks";
-	itemList[8] = "soda";
-	itemList[9] = "shampoo";
-	itemList[10] = "conditioner";
-	itemList[11] = "wine";
-	itemList[12] = "juice";
-	itemList[13] = "fruit";
-	itemList[14] = "vegetables";
 	this->pData = new Data(newNum, newTime);
 	this->pNext = nullptr;
 	this->mpList = new LinkedList;
 	srand(time(NULL));
-	for (int i = 0; i < newTime; i++)
+	for (int i = 0; i < newTime; i++) //newTime is service time/how many items a customer has. I generate this in the simulation then pass it in.
 	{
-		this->mpList->insert(itemList[(rand()+newNum+i) % 14]);
+		this->mpList->insert(itemList[(rand()+newNum+i+newNum%(i+1)) % 14]); //"randomly" selects items from the array of 15 possible items at the store (its a bad store)
 	}
 }
 

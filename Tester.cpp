@@ -8,31 +8,101 @@
 
 #include "Tester.h"
 
+
+//
+// NOTE: the arrays are made in each of these test functions because they used to be in queueNode. instead of 100+ arrays, now there are only 4 in the whole program :)
+//
+
+
 void Tester::enqueue1() //tests enqueue for when the list has 1 item
 {
+	std::string itemList[15];
+	itemList[0] = "eggs";
+	itemList[1] = "milk";
+	itemList[2] = "cheese";
+	itemList[3] = "steak";
+	itemList[4] = "chicken";
+	itemList[5] = "crackers";
+	itemList[6] = "tissues";
+	itemList[7] = "fruit snacks";
+	itemList[8] = "soda";
+	itemList[9] = "shampoo";
+	itemList[10] = "conditioner";
+	itemList[11] = "wine";
+	itemList[12] = "juice";
+	itemList[13] = "fruit";
+	itemList[14] = "vegetables";
 	Queue testQueue;
-	testQueue.enqueue(15, 5);
+	testQueue.enqueue(15, 5, itemList);
 }
 
 void Tester::enqueue2() //tests enqueue for when the list has 2 items
 {
+	std::string itemList[15];
+	itemList[0] = "eggs";
+	itemList[1] = "milk";
+	itemList[2] = "cheese";
+	itemList[3] = "steak";
+	itemList[4] = "chicken";
+	itemList[5] = "crackers";
+	itemList[6] = "tissues";
+	itemList[7] = "fruit snacks";
+	itemList[8] = "soda";
+	itemList[9] = "shampoo";
+	itemList[10] = "conditioner";
+	itemList[11] = "wine";
+	itemList[12] = "juice";
+	itemList[13] = "fruit";
+	itemList[14] = "vegetables";
 	Queue testQueue;
-	testQueue.enqueue(15, 5);
-	testQueue.enqueue(16, 4);
+	testQueue.enqueue(15, 5, itemList);
+	testQueue.enqueue(16, 4, itemList);
 }
 
 void Tester::dequeue1() //tests enqueue for when the list has 1 item
 {
+	std::string itemList[15];
+	itemList[0] = "eggs";
+	itemList[1] = "milk";
+	itemList[2] = "cheese";
+	itemList[3] = "steak";
+	itemList[4] = "chicken";
+	itemList[5] = "crackers";
+	itemList[6] = "tissues";
+	itemList[7] = "fruit snacks";
+	itemList[8] = "soda";
+	itemList[9] = "shampoo";
+	itemList[10] = "conditioner";
+	itemList[11] = "wine";
+	itemList[12] = "juice";
+	itemList[13] = "fruit";
+	itemList[14] = "vegetables";
 	Queue testQueue;
-	testQueue.enqueue(15, 5);
+	testQueue.enqueue(15, 5, itemList);
 	std::cout << "Removed Entry: " << testQueue.dequeue() << std::endl;
 }
 
 void Tester::dequeue2() //tests enqueue for when the list has 2 items
 {
+	std::string itemList[15];
+	itemList[0] = "eggs";
+	itemList[1] = "milk";
+	itemList[2] = "cheese";
+	itemList[3] = "steak";
+	itemList[4] = "chicken";
+	itemList[5] = "crackers";
+	itemList[6] = "tissues";
+	itemList[7] = "fruit snacks";
+	itemList[8] = "soda";
+	itemList[9] = "shampoo";
+	itemList[10] = "conditioner";
+	itemList[11] = "wine";
+	itemList[12] = "juice";
+	itemList[13] = "fruit";
+	itemList[14] = "vegetables";
 	Queue testQueue;
-	testQueue.enqueue(15, 5);
-	testQueue.enqueue(16, 4);
+	testQueue.enqueue(15, 5, itemList);
+	testQueue.enqueue(16, 4, itemList);
 	std::cout << "Removed Entry: " << testQueue.dequeue() << std::endl;
 
 }

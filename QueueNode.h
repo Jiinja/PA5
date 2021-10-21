@@ -11,7 +11,7 @@
 class QueueNode
 {
 public:
-	QueueNode(int newNum, int newTime);
+	QueueNode(int newNum, int newTime, std::string itemList[]);
 	void addTime();
 	QueueNode* getNext() const;
 	void setNext(QueueNode* newNode);
@@ -22,6 +22,6 @@ public:
 private:
 	Data* pData;
 	QueueNode* pNext;
-	LinkedList* mpList;
+	LinkedList* mpList; //ooooo extra credit (20 pts)
 };
 

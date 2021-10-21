@@ -12,7 +12,7 @@ class Queue
 {
 public:
 	Queue();
-	void enqueue(int newNum, int newTime);
+	void enqueue(int newNum, int newTime, std::string itemList[]);
 	Data dequeue();
 	bool isEmpty();
 	void addTime();

@@ -15,9 +15,9 @@ Queue::Queue()
 	this->mpTail = nullptr;
 }
 
-void Queue::enqueue(int newNum, int newTime)
+void Queue::enqueue(int newNum, int newTime, std::string itemList[])
 {
-	QueueNode* newNode = new QueueNode(newNum, newTime);
+	QueueNode* newNode = new QueueNode(newNum, newTime, itemList);
 	if (newNode != nullptr) //allocated space
 	{
 		if (this->mpHead == nullptr) //if empty queue
