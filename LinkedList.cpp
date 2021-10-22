@@ -55,10 +55,9 @@ void LinkedList::printList() //prints the list: item, item, item, ....
 
 LinkedList::~LinkedList()
 {
-	while (this != nullptr && this->mpHead != nullptr) //the list exists and is not empty
+	while (this->mpHead != nullptr) //the list exists and is not empty
 	{
 		this->remove(); //remove stuff
 	}
-	delete this->mpHead; //then delete the head
 }
 

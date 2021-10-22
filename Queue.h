@@ -21,6 +21,7 @@ public:
 	void printQueue();
 	~Queue();
 private:
+	void destroyQueue(QueueNode* deleter);
 	QueueNode* mpHead;
 	QueueNode* mpTail;
 };

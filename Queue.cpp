@@ -88,6 +88,25 @@ void Queue::printQueue() //iterates through the queue printing ID, amount of ite
 
 Queue::~Queue()
 {
-	delete this->mpHead;
-	delete this->mpTail;
+	if (this->mpHead == this->mpTail) //if one item or no items, delete then set to nullptr
+	{
+		delete this->mpHead;
+		this->mpHead = nullptr;
+		this->mpTail = nullptr;
+	}
+	else //if 2+ items, destroy each node and then set to nullptr
+	{
+		destroyQueue(this->mpHead);
+		this->mpHead = nullptr;
+		this->mpTail = nullptr;
+	}
+}
+
+void Queue::destroyQueue(QueueNode* deleter) //recursively goes through the list and deletes all the nodes
+{
+	if (deleter->getNext() != nullptr)
+	{
+		destroyQueue(deleter->getNext());
+	}
+	delete deleter;
 }
